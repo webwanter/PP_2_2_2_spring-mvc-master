@@ -10,11 +10,12 @@ import java.util.stream.Collectors;
 
 @Service
 public class CarServiceImp implements CarService {
-    CarDao carDao;
+    private final CarDao carDao;
 
     public CarServiceImp(CarDao carDao) {
         this.carDao = carDao;
     }
+
     @Override
     public List<Car> getCarsByCount(int count) {
         List<Car> cars = carDao.getAllCars();
